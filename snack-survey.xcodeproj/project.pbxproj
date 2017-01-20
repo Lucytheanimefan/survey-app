@@ -17,6 +17,8 @@
 		7C414BB71E32902C0033B5C2 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C414BB31E328FFB0033B5C2 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7C414BBC1E3290C30033B5C2 /* ConsentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C414BBB1E3290C30033B5C2 /* ConsentDocument.swift */; };
 		7C414BBE1E3291A20033B5C2 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C414BBD1E3291A20033B5C2 /* ConsentTask.swift */; };
+		7C414BC01E32C0AA0033B5C2 /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C414BBF1E32C0AA0033B5C2 /* SurveyTask.swift */; };
+		7C414BC51E32DAAA0033B5C2 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C414BC41E32DAAA0033B5C2 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,9 @@
 		7C414BAC1E328FFA0033B5C2 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "../../Downloads/ResearchKit-master/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
 		7C414BBB1E3290C30033B5C2 /* ConsentDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentDocument.swift; sourceTree = "<group>"; };
 		7C414BBD1E3291A20033B5C2 /* ConsentTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsentTask.swift; sourceTree = "<group>"; };
+		7C414BBF1E32C0AA0033B5C2 /* SurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
+		7C414BC41E32DAAA0033B5C2 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		7C414BC61E32DAAB0033B5C2 /* snack-survey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "snack-survey.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C414BB61E32902C0033B5C2 /* ResearchKit.framework in Frameworks */,
+				7C414BC51E32DAAA0033B5C2 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +112,7 @@
 				7C414B8B1E3156730033B5C2 /* snack-survey */,
 				7C414BA01E3156730033B5C2 /* snack-surveyTests */,
 				7C414B8A1E3156730033B5C2 /* Products */,
+				7C414BC31E32DAAA0033B5C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +128,7 @@
 		7C414B8B1E3156730033B5C2 /* snack-survey */ = {
 			isa = PBXGroup;
 			children = (
+				7C414BC61E32DAAB0033B5C2 /* snack-survey.entitlements */,
 				7C414B8C1E3156730033B5C2 /* AppDelegate.swift */,
 				7C414B8E1E3156730033B5C2 /* ViewController.swift */,
 				7C414B901E3156730033B5C2 /* Main.storyboard */,
@@ -129,6 +137,7 @@
 				7C414B981E3156730033B5C2 /* Info.plist */,
 				7C414BBB1E3290C30033B5C2 /* ConsentDocument.swift */,
 				7C414BBD1E3291A20033B5C2 /* ConsentTask.swift */,
+				7C414BBF1E32C0AA0033B5C2 /* SurveyTask.swift */,
 			);
 			path = "snack-survey";
 			sourceTree = "<group>";
@@ -149,6 +158,14 @@
 				7C414BB51E328FFB0033B5C2 /* ResearchKitTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		7C414BC31E32DAAA0033B5C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C414BC41E32DAAA0033B5C2 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +222,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 65ZN6CM2H7;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					7C414B9C1E3156730033B5C2 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -283,6 +305,7 @@
 			files = (
 				7C414B8F1E3156730033B5C2 /* ViewController.swift in Sources */,
 				7C414BBE1E3291A20033B5C2 /* ConsentTask.swift in Sources */,
+				7C414BC01E32C0AA0033B5C2 /* SurveyTask.swift in Sources */,
 				7C414BBC1E3290C30033B5C2 /* ConsentDocument.swift in Sources */,
 				7C414B8D1E3156730033B5C2 /* AppDelegate.swift in Sources */,
 			);
@@ -429,6 +452,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "snack-survey/snack-survey.entitlements";
 				DEVELOPMENT_TEAM = 65ZN6CM2H7;
 				INFOPLIST_FILE = "snack-survey/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -443,6 +467,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "snack-survey/snack-survey.entitlements";
 				DEVELOPMENT_TEAM = 65ZN6CM2H7;
 				INFOPLIST_FILE = "snack-survey/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

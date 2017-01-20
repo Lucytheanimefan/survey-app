@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -25,7 +26,10 @@ class ViewController: UIViewController {
 extension ViewController : ORKTaskViewControllerDelegate {
     
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
-        //Handle results with taskViewController.result
+        let taskResult = taskViewController.result
+        let taskResults = taskResult.results
+        print("Task results")
+        print(taskResults)
         taskViewController.dismiss(animated: true, completion: nil)
     }
 
@@ -34,6 +38,14 @@ extension ViewController : ORKTaskViewControllerDelegate {
         taskViewController.delegate = self
         present(taskViewController, animated: true, completion: nil)
     }
+    
+    @IBAction func surveyTapped(_ sender: Any) {
+        print("Survey TAPPED");
+        let taskViewController = ORKTaskViewController(task: SurveyTask, taskRun: nil)
+        taskViewController.delegate = self
+        present(taskViewController, animated: true, completion: nil)
+    }
+
     /*
     @IBAction func consentTapped(sender : AnyObject) {
         let taskViewController = ORKTaskViewController(task: ConsentTask, taskRun: nil)
