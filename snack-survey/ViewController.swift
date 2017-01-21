@@ -10,6 +10,7 @@ import UIKit
 import ResearchKit
 
 class ViewController: UIViewController {
+    var finishedConsent = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +26,26 @@ class ViewController: UIViewController {
 
 extension ViewController : ORKTaskViewControllerDelegate {
     
+    
     func taskViewController(_ taskViewController: ORKTaskViewController, didFinishWith reason: ORKTaskViewControllerFinishReason, error: Error?) {
         let taskResult = taskViewController.result
-        let taskResults = taskResult.results
-        print("Task results")
-        print(taskResults)
+        print("TASKRESULT--------")
+        print(taskResult)
+        let results = taskResult.results as! [ORKStepResult]
+        for stepResult in results{
+            print("STEP RESULT: ")
+            print(stepResult)
+            if ((stepResult.results?.count)!>0){
+                print("STEP RESULTS GREATER THAN 0")
+                print("SIGNATURE:")
+                let res = stepResult.results?[0] as? ORKConsentSignatureResult
+                let consent = res!.consented
+                if (consent){
+                    finishedConsent = consent;
+                }
+            }
+        }
+        
         taskViewController.dismiss(animated: true, completion: nil)
     }
 
@@ -40,10 +56,16 @@ extension ViewController : ORKTaskViewControllerDelegate {
     }
     
     @IBAction func surveyTapped(_ sender: Any) {
+        if (finishedConsent){
         print("Survey TAPPED");
         let taskViewController = ORKTaskViewController(task: SurveyTask, taskRun: nil)
         taskViewController.delegate = self
         present(taskViewController, animated: true, completion: nil)
+        }else{
+            let alert = UIAlertController(title: "Alert", message: "You did not sign the consent form. Please do that first.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 
     /*
