@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     var onConsent = false
     var onSurvey = false
     var i=0;
-    
+    let survey = surveyAPI();
     var surveyResults:[String: [Any]]=[:]
     
     override func viewDidLoad() {
@@ -69,6 +69,7 @@ extension ViewController : ORKTaskViewControllerDelegate {
         
         print("SURVET RESULTS: ")
         print(surveyResults)
+        survey.logData(data: surveyResults)
         taskViewController.dismiss(animated: true, completion: nil)
     }
     
