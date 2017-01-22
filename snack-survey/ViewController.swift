@@ -50,8 +50,7 @@ extension ViewController : ORKTaskViewControllerDelegate {
                     if (consent){
                         finishedConsent = consent;
                     }
-                }
-                if (stepResult.identifier=="QuestionStep"){
+                }else if (stepResult.identifier=="QuestionStep"){
                     let choices = stepResult.results?[0] as! ORKTextQuestionResult
                     let answers = choices.answer
                     print("TEXT IDENTIFIER: "+stepResult.identifier)
@@ -72,10 +71,14 @@ extension ViewController : ORKTaskViewControllerDelegate {
         taskViewController.dismiss(animated: true, completion: nil)
     }
     
+    
+    
     @IBAction func consentTapped(_ sender: Any) {
         //onConsent = true
         //onSurvey = false
         let taskViewController = ORKTaskViewController(task: ConsentTask, taskRun: nil)
+        print("CONSENT taskViewController: ")
+        print(taskViewController)
         taskViewController.delegate = self
         present(taskViewController, animated: true, completion: nil)
     }
@@ -86,6 +89,8 @@ extension ViewController : ORKTaskViewControllerDelegate {
         if (finishedConsent){
             print("Survey TAPPED, new taskviewcontroller so we hope");
             let taskViewController1 = ORKTaskViewController(task: SurveyTask, taskRun: nil)
+            print("SURVEY taskViewController: ")
+            print(taskViewController1)
             taskViewController1.delegate = self
             present(taskViewController1, animated: true, completion: nil)
         }else{
