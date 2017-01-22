@@ -526,6 +526,7 @@
 				7C414BA81E3156730033B5C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7C414BA91E3156730033B5C2 /* Build configuration list for PBXNativeTarget "snack-surveyTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +535,7 @@
 				7C414BAB1E3156730033B5C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
