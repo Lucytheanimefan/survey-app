@@ -19,6 +19,7 @@
 		7C414BBE1E3291A20033B5C2 /* ConsentTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C414BBD1E3291A20033B5C2 /* ConsentTask.swift */; };
 		7C414BC01E32C0AA0033B5C2 /* SurveyTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C414BBF1E32C0AA0033B5C2 /* SurveyTask.swift */; };
 		7C414BC51E32DAAA0033B5C2 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C414BC41E32DAAA0033B5C2 /* HealthKit.framework */; };
+		7C414BC81E3434B90033B5C2 /* surveyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C414BC71E3434B90033B5C2 /* surveyAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		7C414BBF1E32C0AA0033B5C2 /* SurveyTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyTask.swift; sourceTree = "<group>"; };
 		7C414BC41E32DAAA0033B5C2 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		7C414BC61E32DAAB0033B5C2 /* snack-survey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "snack-survey.entitlements"; sourceTree = "<group>"; };
+		7C414BC71E3434B90033B5C2 /* surveyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = surveyAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				7C414BBB1E3290C30033B5C2 /* ConsentDocument.swift */,
 				7C414BBD1E3291A20033B5C2 /* ConsentTask.swift */,
 				7C414BBF1E32C0AA0033B5C2 /* SurveyTask.swift */,
+				7C414BC71E3434B90033B5C2 /* surveyAPI.swift */,
 			);
 			path = "snack-survey";
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				7C414BBE1E3291A20033B5C2 /* ConsentTask.swift in Sources */,
 				7C414BC01E32C0AA0033B5C2 /* SurveyTask.swift in Sources */,
 				7C414BBC1E3290C30033B5C2 /* ConsentDocument.swift in Sources */,
+				7C414BC81E3434B90033B5C2 /* surveyAPI.swift in Sources */,
 				7C414B8D1E3156730033B5C2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

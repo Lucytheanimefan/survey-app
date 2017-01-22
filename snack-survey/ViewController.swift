@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var onSurvey = false
     var i=0;
     
-    var surveyResults:[String: [String]]=[:]
+    var surveyResults:[String: [Any]]=[:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,15 +52,16 @@ extension ViewController : ORKTaskViewControllerDelegate {
                     }
                 }else if (stepResult.identifier=="QuestionStep"){
                     let choices = stepResult.results?[0] as! ORKTextQuestionResult
-                    let answers = choices.answer
+                    let answers = [choices.answer]
                     print("TEXT IDENTIFIER: "+stepResult.identifier)
-                    surveyResults[stepResult.identifier]=answers as! [String]?;
+                    
+                    surveyResults[stepResult.identifier]=answers //as [Any]?;
                     
                 }else if (stepResult.identifier=="SnackStep" || stepResult.identifier=="IceCreamStep"){
                     let choices = stepResult.results?[0] as! ORKChoiceQuestionResult
                     let answers = choices.answer
                     print("IDENTIFIER: "+stepResult.identifier)
-                    surveyResults[stepResult.identifier]=answers as! [String]?;
+                    surveyResults[stepResult.identifier]=answers as! [Any]?;
                 }
                 //}
             }
