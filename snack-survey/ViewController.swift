@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     let survey = surveyAPI();
     var surveyResults:[String: [Any]]=[:]
     
+    var foodKey:[Int:String] = [0:"Cookies and Cream",1:"Chocolate Chip Cookie Dough",2:"Strawberry",3:"Vanilla",4:"Twix",5:"Granola",6:"Pizza",7:"Caffeine",8:"Chips",9:"Ramen",10:"Real Sushi",11:"Fake Sushi"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -51,17 +53,22 @@ extension ViewController : ORKTaskViewControllerDelegate {
                         finishedConsent = consent;
                     }
                 }else if (stepResult.identifier=="QuestionStep"){
+                    surveyResults["Time Submitted"] = [Date().iso8601] as [Any]
                     let choices = stepResult.results?[0] as! ORKTextQuestionResult
                     let answers = [choices.answer]
-                    print("TEXT IDENTIFIER: "+stepResult.identifier)
+                    //print("TEXT IDENTIFIER: "+stepResult.identifier)
                     
                     surveyResults[stepResult.identifier]=answers //as [Any]?;
                     
                 }else if (stepResult.identifier=="SnackStep" || stepResult.identifier=="IceCreamStep"){
                     let choices = stepResult.results?[0] as! ORKChoiceQuestionResult
-                    let answers = choices.answer
+                    var realAnswers:[String]=[];
+                    let answers = choices.answer as! [Int]
+                    for ans in answers{
+                        realAnswers.append(foodKey[ans]!)
+                    }
                     print("IDENTIFIER: "+stepResult.identifier)
-                    surveyResults[stepResult.identifier]=answers as! [Any]?;
+                    surveyResults[stepResult.identifier] = realAnswers;
                 }
                 //}
             }
@@ -87,7 +94,7 @@ extension ViewController : ORKTaskViewControllerDelegate {
     
     @IBAction func surveyTapped(_ sender: Any) {
         //onSurvey = true
-        //onConsent = false
+        surveyResults["Time Survey Began"] = [Date().iso8601]
         if (finishedConsent){
             print("Survey TAPPED, new taskviewcontroller so we hope");
             let taskViewController1 = ORKTaskViewController(task: SurveyTask, taskRun: nil)
@@ -102,12 +109,27 @@ extension ViewController : ORKTaskViewControllerDelegate {
         }
     }
     
-    /*
-     @IBAction func consentTapped(sender : AnyObject) {
-     let taskViewController = ORKTaskViewController(task: ConsentTask, taskRun: nil)
-     taskViewController.delegate = self
-     present(taskViewController, animated: true, completion: nil)
-     }*/
     
+}
+
+
+extension String {
+    var dateFromISO8601: Date? {
+        return Date.iso8601Formatter.date(from: self)
+    }
+}
+
+extension Date {
+    static let iso8601Formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+        return formatter
+    }()
+    var iso8601: String {
+        return Date.iso8601Formatter.string(from: self)
+    }
 }
 

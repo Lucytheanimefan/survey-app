@@ -34,24 +34,24 @@ public var SurveyTask: ORKOrderedTask {
         ORKTextChoice(text: "Vanilla", value: 3 as NSNumber)
     ]
     let questAnswerFormat: ORKTextChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormat(with: .singleChoice, textChoices: textChoices)
-    let questQuestionStep = ORKQuestionStep(identifier: "IceCreamStep", title: questQuestionStepTitle, answer: questAnswerFormat)
+    let questQuestionStep = ORKQuestionStep(identifier: "IceCream", title: questQuestionStepTitle, answer: questAnswerFormat)
     steps += [questQuestionStep]
     
     //favorite snack
     let snackQuestionStepTitle = "What is your favorite snack?"
     let snackTextChoices = [
-        ORKTextChoice(text: "Twix", value: 0 as NSNumber),
-        ORKTextChoice(text: "Granola", value: 1 as NSNumber),
-        ORKTextChoice(text: "Pizza", value: 2 as NSNumber),
-        ORKTextChoice(text: "Caffeine", value: 3 as NSNumber),
-        ORKTextChoice(text: "Chips", value: 4 as NSNumber),
-        ORKTextChoice(text: "Ramen", value: 5 as NSNumber),
-        ORKTextChoice(text: "Real Sushi", value: 6 as NSNumber),
-        ORKTextChoice(text: "Fake Sushi", value: 7 as NSNumber)
+        ORKTextChoice(text: "Twix", value: 4 as NSNumber),
+        ORKTextChoice(text: "Granola", value: 5 as NSNumber),
+        ORKTextChoice(text: "Pizza", value: 6 as NSNumber),
+        ORKTextChoice(text: "Caffeine", value: 7 as NSNumber),
+        ORKTextChoice(text: "Chips", value: 8 as NSNumber),
+        ORKTextChoice(text: "Ramen", value: 9 as NSNumber),
+        ORKTextChoice(text: "Real Sushi", value: 10 as NSNumber),
+        ORKTextChoice(text: "Fake Sushi", value: 11 as NSNumber)
         
     ]
     let snackAnswerFormat: ORKTextChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormat(with: .multipleChoice, textChoices: snackTextChoices)
-    let snackQuestionStep = ORKQuestionStep(identifier: "SnackStep", title: snackQuestionStepTitle, answer: snackAnswerFormat)
+    let snackQuestionStep = ORKQuestionStep(identifier: "Snack", title: snackQuestionStepTitle, answer: snackAnswerFormat)
     snackQuestionStep.isOptional = true
     steps += [snackQuestionStep]
     
@@ -59,7 +59,7 @@ public var SurveyTask: ORKOrderedTask {
     let nameAnswerFormat = ORKTextAnswerFormat(maximumLength: 50)
     nameAnswerFormat.multipleLines = true
     let nameQuestionStepTitle = "Why did you choose those particular snacks and/or ice cream?"
-    let nameQuestionStep = ORKQuestionStep(identifier: "QuestionStep", title: nameQuestionStepTitle, answer: nameAnswerFormat)
+    let nameQuestionStep = ORKQuestionStep(identifier: "SnackThoughts", title: nameQuestionStepTitle, answer: nameAnswerFormat)
     nameQuestionStep.isOptional=true
     steps += [nameQuestionStep]
     
