@@ -92,15 +92,17 @@ extension ViewController : ORKTaskViewControllerDelegate {
         
         print("SURVET RESULTS: ")
         print(surveyResults)
-        survey.logData(data: surveyResults)
+        if (onSurvey){
+            survey.logData(data: surveyResults)
+        }
         taskViewController.dismiss(animated: true, completion: nil)
     }
     
     
     
     @IBAction func consentTapped(_ sender: Any) {
-        //onConsent = true
-        //onSurvey = false
+        onConsent = true
+        onSurvey = false
         let taskViewController = ORKTaskViewController(task: ConsentTask, taskRun: nil)
         print("CONSENT taskViewController: ")
         print(taskViewController)
@@ -109,7 +111,7 @@ extension ViewController : ORKTaskViewControllerDelegate {
     }
     
     @IBAction func surveyTapped(_ sender: Any) {
-        //onSurvey = true
+        onSurvey = true
         surveyResults["Time Survey Began"] = [Date().iso8601]
         if (finishedConsent){
             print("Survey TAPPED, new taskviewcontroller so we hope");
