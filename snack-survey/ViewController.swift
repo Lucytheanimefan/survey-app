@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "foodyPenguin")!)
         roundedCornerButton.layer.cornerRadius = 5
         roundedCornerSurveyButton.layer.cornerRadius = 5
+        /*
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "foodyPenguin")?.draw(in: self.view.bounds)
         
@@ -37,6 +38,7 @@ class ViewController: UIViewController {
         UIGraphicsEndImageContext()
         
         self.view.backgroundColor = UIColor(patternImage: image)
+ */
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -122,7 +124,7 @@ extension ViewController : ORKTaskViewControllerDelegate {
             present(taskViewController1, animated: true, completion: nil)
         }else{
             let alert = UIAlertController(title: "Alert", message: "You did not sign the consent form. Please do that first.", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }

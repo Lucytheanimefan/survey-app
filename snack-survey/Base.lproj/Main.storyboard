@@ -22,22 +22,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksh-01-oI6">
-                                <rect key="frame" x="140" y="226" width="95" height="30"/>
-                                <color key="backgroundColor" red="0.34196274492376716" green="0.66300155872785338" blue="0.99846774339675903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <color key="tintColor" red="0.3419627449" green="0.66300155869999999" blue="0.9984677434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Consent">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="consentTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PtT-kN-NM8"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sge-1l-VzJ">
-                                <rect key="frame" x="151" y="287" width="72" height="30"/>
+                                <rect key="frame" x="16" y="494" width="343" height="64"/>
                                 <color key="backgroundColor" red="0.33668854058982817" green="0.66843998250555914" blue="0.99846774339675903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="ZRp-cv-StN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="tintColor" red="0.3419627449" green="0.66300155869999999" blue="0.9984677434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Survey">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,16 +37,48 @@
                                     <action selector="surveyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mzd-Cb-Elp"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snackSurvey" translatesAutoresizingMaskIntoConstraints="NO" id="wYR-lr-OXr">
+                                <rect key="frame" x="0.0" y="40" width="375" height="328"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Snack Survey" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="29g-ck-vty">
+                                <rect key="frame" x="0.0" y="274" width="375" height="76"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.25313359532612895" green="0.50773004223806806" blue="0.76154029187817263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="47"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksh-01-oI6">
+                                <rect key="frame" x="16" y="406" width="343" height="65"/>
+                                <color key="backgroundColor" red="0.34196274492376716" green="0.66300155872785338" blue="0.99846774339675903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="JmH-VC-pHM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="tintColor" red="0.3419627449" green="0.66300155869999999" blue="0.9984677434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Consent">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="consentTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PtT-kN-NM8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ksh-01-oI6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="124" id="3aX-BG-vZ1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ksh-01-oI6" secondAttribute="trailing" constant="124" id="3jG-wl-UKp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Sge-1l-VzJ" secondAttribute="trailing" constant="136" id="QyC-2T-OAS"/>
-                            <constraint firstItem="Sge-1l-VzJ" firstAttribute="top" secondItem="ksh-01-oI6" secondAttribute="bottom" constant="31" id="Tbc-DY-rf1"/>
-                            <constraint firstItem="Sge-1l-VzJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="135" id="Vr0-d6-4d6"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sge-1l-VzJ" secondAttribute="bottom" constant="350" id="Z2S-HG-7Dl"/>
-                            <constraint firstItem="ksh-01-oI6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="206" id="vjh-u1-y2y"/>
+                            <constraint firstItem="Sge-1l-VzJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8O7-fW-qER"/>
+                            <constraint firstItem="ksh-01-oI6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="F2z-dU-5SX"/>
+                            <constraint firstItem="29g-ck-vty" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IPX-en-fyl"/>
+                            <constraint firstItem="29g-ck-vty" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="254" id="K3d-ag-cG3"/>
+                            <constraint firstAttribute="trailing" secondItem="29g-ck-vty" secondAttribute="trailing" id="MsT-HQ-7Il"/>
+                            <constraint firstItem="ksh-01-oI6" firstAttribute="top" secondItem="wYR-lr-OXr" secondAttribute="bottom" constant="38" id="RQN-1X-kL6"/>
+                            <constraint firstItem="Sge-1l-VzJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SX7-wb-iyM"/>
+                            <constraint firstItem="wYR-lr-OXr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YKU-Yb-JDk"/>
+                            <constraint firstItem="ksh-01-oI6" firstAttribute="top" secondItem="29g-ck-vty" secondAttribute="bottom" constant="56" id="bMp-lG-rbX"/>
+                            <constraint firstAttribute="trailing" secondItem="wYR-lr-OXr" secondAttribute="trailing" id="iAD-Sz-UPq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sge-1l-VzJ" secondAttribute="bottom" constant="109" id="mmk-b0-p8V"/>
+                            <constraint firstItem="wYR-lr-OXr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="p3W-X9-ZdQ"/>
+                            <constraint firstItem="ksh-01-oI6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ydB-QO-VXc"/>
+                            <constraint firstItem="Sge-1l-VzJ" firstAttribute="top" secondItem="ksh-01-oI6" secondAttribute="bottom" constant="23" id="zaM-A6-3SY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -68,4 +91,7 @@
             <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="snackSurvey" width="273" height="240"/>
+    </resources>
 </document>
