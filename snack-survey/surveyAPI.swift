@@ -18,6 +18,7 @@ class surveyAPI{
     
     //performs post request
     private func makeHTTPPostRequest(path: String, body: [String: Any]) {
+        print("Make POST request")
         let request = NSMutableURLRequest(url: NSURL(string: path)! as URL)
         
         // Set the method to POST
