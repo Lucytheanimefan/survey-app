@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,16 +22,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksh-01-oI6">
-                                <rect key="frame" x="158" y="278" width="58" height="30"/>
-                                <state key="normal" title="Consent"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksh-01-oI6">
+                                <rect key="frame" x="140" y="226" width="95" height="30"/>
+                                <color key="backgroundColor" red="0.34196274492376716" green="0.66300155872785338" blue="0.99846774339675903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="tintColor" red="0.3419627449" green="0.66300155869999999" blue="0.9984677434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Consent">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="consentTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PtT-kN-NM8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sge-1l-VzJ">
-                                <rect key="frame" x="163" y="338" width="48" height="30"/>
-                                <state key="normal" title="Survey"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sge-1l-VzJ">
+                                <rect key="frame" x="151" y="287" width="72" height="30"/>
+                                <color key="backgroundColor" red="0.33668854058982817" green="0.66843998250555914" blue="0.99846774339675903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="tintColor" red="0.3419627449" green="0.66300155869999999" blue="0.9984677434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Survey">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="surveyTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mzd-Cb-Elp"/>
                                 </connections>
@@ -38,12 +49,23 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Sge-1l-VzJ" firstAttribute="top" secondItem="ksh-01-oI6" secondAttribute="bottom" constant="30" id="k6K-eI-mp3"/>
+                            <constraint firstItem="ksh-01-oI6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="124" id="3aX-BG-vZ1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ksh-01-oI6" secondAttribute="trailing" constant="124" id="3jG-wl-UKp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sge-1l-VzJ" secondAttribute="trailing" constant="136" id="QyC-2T-OAS"/>
+                            <constraint firstItem="Sge-1l-VzJ" firstAttribute="top" secondItem="ksh-01-oI6" secondAttribute="bottom" constant="31" id="Tbc-DY-rf1"/>
+                            <constraint firstItem="Sge-1l-VzJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="135" id="Vr0-d6-4d6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sge-1l-VzJ" secondAttribute="bottom" constant="350" id="Z2S-HG-7Dl"/>
+                            <constraint firstItem="ksh-01-oI6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="206" id="vjh-u1-y2y"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="roundedCornerButton" destination="ksh-01-oI6" id="bCt-s4-xnX"/>
+                        <outlet property="roundedCornerSurveyButton" destination="Sge-1l-VzJ" id="jqZ-PW-jhI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
 </document>

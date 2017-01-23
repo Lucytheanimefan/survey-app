@@ -19,10 +19,24 @@ class ViewController: UIViewController {
     
     var foodKey:[Int:String] = [0:"Cookies and Cream",1:"Chocolate Chip Cookie Dough",2:"Strawberry",3:"Vanilla",4:"Twix",5:"Granola",6:"Pizza",7:"Caffeine",8:"Chips",9:"Ramen",10:"Real Sushi",11:"Fake Sushi"]
     
+    @IBOutlet weak var roundedCornerButton: UIButton! //consent button
+    @IBOutlet weak var roundedCornerSurveyButton: UIButton! //survey button
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "foodyPenguin")!)
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "foodyPenguin")!)
+        roundedCornerButton.layer.cornerRadius = 5
+        roundedCornerSurveyButton.layer.cornerRadius = 5
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "foodyPenguin")?.draw(in: self.view.bounds)
+        
+        var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        self.view.backgroundColor = UIColor(patternImage: image)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
