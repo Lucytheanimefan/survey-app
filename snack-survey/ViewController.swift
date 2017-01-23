@@ -52,7 +52,7 @@ extension ViewController : ORKTaskViewControllerDelegate {
                     if (consent){
                         finishedConsent = consent;
                     }
-                }else if (stepResult.identifier=="QuestionStep"){
+                }else if (stepResult.identifier=="SnackThoughts"){
                     surveyResults["Time Submitted"] = [Date().iso8601] as [Any]
                     let choices = stepResult.results?[0] as! ORKTextQuestionResult
                     let answers = [choices.answer]
@@ -60,7 +60,7 @@ extension ViewController : ORKTaskViewControllerDelegate {
                     
                     surveyResults[stepResult.identifier]=answers //as [Any]?;
                     
-                }else if (stepResult.identifier=="SnackStep" || stepResult.identifier=="IceCreamStep"){
+                }else if (stepResult.identifier=="Snack" || stepResult.identifier=="IceCream"){
                     let choices = stepResult.results?[0] as! ORKChoiceQuestionResult
                     var realAnswers:[String]=[];
                     let answers = choices.answer as! [Int]
